@@ -8,7 +8,7 @@ app.set('view engine','ejs')
 
 app.get('/',function(req,res){
     //body
-    res.render('index')
+    res.render('index',  {weather: null, error: null})
 })
 
 app.post('/',function(req,res){
@@ -27,7 +27,7 @@ app.post('/',function(req,res){
             }
             else{
                 var weathertext = `it is ${weather.main.temp} degrees in ${weather.name}`
-                res.render('index',{weather:text,error:null})
+                res.render('index',{weather:weatherText,error:null})
             }
         }
     })
